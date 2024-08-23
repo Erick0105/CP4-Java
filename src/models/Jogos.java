@@ -81,5 +81,6 @@ public class Jogos {
         this.lancamento = lancamento;
         this.preco = preco;
         this.genero = genero;
+        this.sequencia = sequencia;
     }
 }
