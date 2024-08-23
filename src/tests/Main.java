@@ -40,7 +40,7 @@ public class Main {
                 games.add(game.getLancamento());
                 break;
             case 2:
-                System.out.println(jogos);
+                System.out.println(games);
                 break;
             case 3:
                 System.out.println("\n3- Consultar por codigo");
