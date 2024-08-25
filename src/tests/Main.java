@@ -44,43 +44,43 @@ public class Main {
                 String opGenero = leitor.nextLine().toUpperCase();
 
                 switch (opGenero){
-                    case "AC":
+                    case "ACAO":
                          genero = GeneroJogoEnum.ACAO;
                         break;
-                    case "SA":
+                    case "SANDBOX":
                         genero = GeneroJogoEnum.SANDBOX;
                         break;
-                    case "TE":
+                    case "TERROR":
                         genero = GeneroJogoEnum.TERROR;
                         break;
-                    case "RP":
+                    case "RPG":
                         genero = GeneroJogoEnum.RPG;
                         break;
-                    case "FP":
+                    case "FPS":
                         genero = GeneroJogoEnum.FPS;
                         break;
-                    case "CO":
+                    case "CORRIDA":
                         genero = GeneroJogoEnum.CORRIDA;
                         break;
-                    case "SO":
+                    case "SOBREVIVENCIA":
                         genero = GeneroJogoEnum.SOBREVIVENCIA;
                         break;
-                    case "LU":
+                    case "LUTA":
                         genero = GeneroJogoEnum.LUTA;
                         break;
-                    case "SI":
+                    case "SIMULACAO":
                         genero = GeneroJogoEnum.SIMULACAO;
                         break;
-                    case "AV":
+                    case "AVENTURA":
                         genero = GeneroJogoEnum.AVENTURA;
                         break;
-                    case "RI":
+                    case "RITMO":
                         genero = GeneroJogoEnum.RITMO;
                         break;
-                    case "ES":
+                    case "ESPORTS":
                         genero = GeneroJogoEnum.ESPORTS;
                         break;
-                    case "ED":
+                    case "EDUCACIONAL":
                         genero = GeneroJogoEnum.EDUCACIONAL;
                         break;
                     default:
