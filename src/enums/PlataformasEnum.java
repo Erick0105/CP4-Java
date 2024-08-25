@@ -3,5 +3,6 @@ package enums;
 public enum PlataformasEnum {
     PC,
     CELULAR,
-    CONSOLE
+    CONSOLE,
+    TODAS
 }

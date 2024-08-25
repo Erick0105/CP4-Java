@@ -6,24 +6,21 @@ import java.util.ArrayList;
 public class Jogos {
 
     //Atributos
-    private String id;
+    private int id;
     private String nome;
     private int lancamento;
     private double preco;
     private GeneroJogoEnum genero;
     private Boolean sequencia;
     private ArrayList<String> plataforma;
-    private ArrayList<String> games;
-
 
     //Getters e Setters
 
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -74,13 +71,4 @@ public class Jogos {
         this.plataforma = plataforma;
     }
 
-    public ArrayList<String> getGames() {return games;}
-    public void setGames(ArrayList<String> games) {
-        this.id = id;
-        this.nome = nome;
-        this.lancamento = lancamento;
-        this.preco = preco;
-        this.genero = genero;
-        this.sequencia = sequencia;
-    }
 }
