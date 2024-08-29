@@ -18,45 +18,35 @@ public class Jogos {
 
     //Getters e Setters
 
+    public Jogos(int id, String nome, int lancamento, double preco, GeneroJogoEnum genero, PlataformasEnum plataforma){
+        this.id = id;
+        this.nome = nome;
+        this.lancamento = lancamento;
+        this.preco = preco;
+        this.genero = genero;
+        this.plataforma = plataforma;
+    }
+
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
 
     public int getLancamento() {
         return lancamento;
     }
-    public void setLancamento(int lancamento) {
-        this.lancamento = lancamento;
-    }
-
 
     public double getPreco() {
         return preco;
     }
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
 
     public GeneroJogoEnum getGenero() {
         return genero;
     }
-    public void setGenero(GeneroJogoEnum genero) {
-        this.genero = genero;
-    }
-
 
     public Boolean getSequencia() {
         return sequencia;
@@ -67,9 +57,5 @@ public class Jogos {
 
     public PlataformasEnum getPlataforma() {
         return plataforma;
-    }
-
-    public void setPlataforma(PlataformasEnum plataforma) {
-        this.plataforma = plataforma;
     }
 }
