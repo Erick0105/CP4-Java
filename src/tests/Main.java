@@ -22,11 +22,11 @@ public class Main {
                     "\n5- Alterar" +
                     "\n6- Excluir" +
                     "\n----------------------------------------------" +
-                    "\nDigite a operação desejada: ");
+                    "\nDigite a opção desejada: ");
             int op = leitor.nextInt();
 
             if (op == 0) {
-                System.out.println("Até logo");
+                System.out.println("Volte sempre :) ");
                 break;
 
             } else if (op == 1) {
@@ -138,6 +138,25 @@ public class Main {
                         System.out.println("\nEsse jogo não foi encontrado!\n");
                     }
                 }
+            } else if (op == 4) {
+
+            } else if (op == 5) {
+
+            } else if (op == 6) {
+                System.out.println("Digite o ID ou Codigo do jogo para exclui-lo!!: ");
+                int id = leitor.nextInt();
+                for (Jogos jogos : listGames) {
+                    if (jogos.getId() == id) {
+                        System.out.println("------------------------------------------------------------------------------------");
+                        listGames.remove(jogos);
+                        System.out.println("Jogo apagado");
+                        System.out.println("------------------------------------------------------------------------------------\n");
+                    } else {
+                        System.out.println("\nEsse jogo não foi encontrado!\n");
+                    }
+                }
+            } else {
+                System.out.println("Opção invalida, Por favor tente novamente");
             }
         }
     }
