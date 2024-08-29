@@ -8,7 +8,6 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Jogos game = new Jogos();
         ArrayList<Jogos> listGames = new ArrayList<>();
 
         Scanner leitor = new Scanner(System.in);
@@ -33,89 +32,90 @@ public class Main {
             } else if (op == 1) {
                 System.out.println("--------CADASTRAR----------");
                 System.out.println("Digite o nome do jogo: ");
-                game.setNome(leitor.nextLine());
+                String nome = leitor.nextLine();
                 System.out.println("Digite o ID do jogo: ");
-                game.setId(leitor.nextInt());
+                int id = leitor.nextInt();
                 System.out.println("Digite a data de lançamento do jogo: ");
-                game.setLancamento(leitor.nextInt());
+                int lancamento = leitor.nextInt();
                 System.out.println("Digite o preço do Jogo: ");
-                game.setPreco(leitor.nextDouble());
+                double preco = leitor.nextDouble();
 
-                game.setGenero(null);
-                while (game.getGenero() == null) {
+                GeneroJogoEnum genero = null;
+                while (genero == null) {
                     System.out.println("Digite o genero do Jogo:\n(1)ACAO, (2)SANDBOX, (3)TERROR, (4)RPG, (5)FPS, (6)CORRIDA, (7)SOBREVIVENCIA, (8)LUTA, (9)SIMULACAO, (10)AVENTURA, (11)RITMO, (12)ESPORTS, (13)EDUCACIONAL: ");
                     int opGenero = leitor.nextInt();
 
                     switch (opGenero) {
                         case 1:
-                            game.setGenero(GeneroJogoEnum.ACAO);
+                            genero = GeneroJogoEnum.ACAO;
                             break;
                         case 2:
-                            game.setGenero( GeneroJogoEnum.SANDBOX);
+                            genero = GeneroJogoEnum.SANDBOX;
                             break;
                         case 3:
-                            game.setGenero( GeneroJogoEnum.TERROR);
+                            genero = GeneroJogoEnum.TERROR;
                             break;
                         case 4:
-                            game.setGenero(GeneroJogoEnum.RPG);
+                            genero = GeneroJogoEnum.RPG;
                             break;
                         case 5:
-                            game.setGenero(GeneroJogoEnum.FPS);
+                            genero = GeneroJogoEnum.FPS;
                             break;
                         case 6:
-                            game.setGenero(GeneroJogoEnum.CORRIDA);
+                            genero = GeneroJogoEnum.CORRIDA;
                             break;
                         case 7:
-                            game.setGenero(GeneroJogoEnum.SOBREVIVENCIA);
+                            genero = GeneroJogoEnum.SOBREVIVENCIA;
                             break;
                         case 8:
-                            game.setGenero(GeneroJogoEnum.LUTA);
+                            genero = GeneroJogoEnum.LUTA;
                             break;
                         case 9:
-                            game.setGenero(GeneroJogoEnum.SIMULACAO);
+                            genero = GeneroJogoEnum.SIMULACAO;
                             break;
                         case 10:
-                            game.setGenero(GeneroJogoEnum.AVENTURA);
+                            genero = GeneroJogoEnum.AVENTURA;
                             break;
                         case 11:
-                            game.setGenero(GeneroJogoEnum.RITMO);
+                            genero = GeneroJogoEnum.RITMO;
                             break;
                         case 12:
-                            game.setGenero(GeneroJogoEnum.ESPORTS);
+                            genero = GeneroJogoEnum.ESPORTS;
                             break;
                         case 13:
-                            game.setGenero(GeneroJogoEnum.EDUCACIONAL);
+                            genero = GeneroJogoEnum.EDUCACIONAL;
                             break;
                         default:
                             System.out.println("Esse genero invalido. Por Favor, tente novamente!");
                     }
                 }
-                game.setPlataforma(null);
-                while (game.getPlataforma() == null){
+                PlataformasEnum plataforma = null;
+                while (plataforma == null){
                     System.out.println("Digite a plataforma do Jogo:\n(1)PC, (2)Celular, (3)Console, (4)Todas : ");
                     int opPlataforma = leitor.nextInt();
 
                     switch (opPlataforma){
 
                         case 1:
-                            game.setPlataforma(PlataformasEnum.PC);
+                            plataforma = PlataformasEnum.PC;
                             break;
                         case 2:
-                            game.setPlataforma(PlataformasEnum.CELULAR);
+                            plataforma = PlataformasEnum.CELULAR;
                             break;
                         case 3:
-                            game.setPlataforma(PlataformasEnum.CONSOLE);
+                            plataforma = PlataformasEnum.CONSOLE;
                             break;
                         case 4:
-                            game.setPlataforma(PlataformasEnum.TODAS);
+                            plataforma = PlataformasEnum.TODAS;
                             break;
                         default:
                             System.out.println("Opção escolhida é invalida");
                     }
                 }
 
+                Jogos game = new Jogos(id, nome, lancamento, preco, genero, plataforma);
                 listGames.add(game);
-                System.out.println("Jogo Listado\n\n");
+                System.out.println("--------- Jogo Listado com Sucesso!! ---------\n\n");
 
             } else if (op == 2) {
                 System.out.println("Jogos listados:");
