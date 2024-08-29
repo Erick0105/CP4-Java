@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Jogos> listGames = new ArrayList<>();
+        ArrayList<Jogos> listGames = new ArrayList<Jogos>();
 
         Scanner leitor = new Scanner(System.in);
 
@@ -30,14 +30,15 @@ public class Main {
                 break;
 
             } else if (op == 1) {
+
                 System.out.println("--------CADASTRAR----------");
-                System.out.println("Digite o nome do jogo: ");
-                String nome = leitor.nextLine();
-                System.out.println("Digite o ID do jogo: ");
+                System.out.print("Digite o ID do jogo: ");
                 int id = leitor.nextInt();
-                System.out.println("Digite a data de lançamento do jogo: ");
+                System.out.print("Digite o nome do jogo: ");
+                String nome = leitor.nextLine();
+                System.out.print("Digite a data de lançamento do jogo: ");
                 int lancamento = leitor.nextInt();
-                System.out.println("Digite o preço do Jogo: ");
+                System.out.print("Digite o preço do Jogo: ");
                 double preco = leitor.nextDouble();
 
                 GeneroJogoEnum genero = null;
@@ -87,6 +88,7 @@ public class Main {
                             break;
                         default:
                             System.out.println("Esse genero invalido. Por Favor, tente novamente!");
+                            break;
                     }
                 }
                 PlataformasEnum plataforma = null;
@@ -121,8 +123,20 @@ public class Main {
                 System.out.println("Jogos listados:");
                 for (Jogos jogos : listGames){
                     System.out.println("------------------------------------------------------------------------------------");
-                    System.out.println(jogos.getNome() + " - " + jogos.getId() + " - " + jogos.getLancamento() + " - " + jogos.getPreco() + " - " + jogos.getGenero() + " - " + jogos.getPlataforma());
-                    System.out.println("------------------------------------------------------------------------------------");
+                    System.out.println( jogos.getId() + " - " + jogos.getNome() + " - " + jogos.getLancamento() + " - " + jogos.getPreco() + " - " + jogos.getGenero() + " - " + jogos.getPlataforma());
+                    System.out.println("------------------------------------------------------------------------------------\n");
+                }
+            } else if (op == 3) {
+                System.out.println("Digite o ID ou Codigo do jogo: ");
+                int id = leitor.nextInt();
+                for (Jogos jogos : listGames){
+                    if (jogos.getId() == id){
+                        System.out.println("------------------------------------------------------------------------------------");
+                        System.out.println( jogos.getId() + " - " + jogos.getNome() + " - " + jogos.getLancamento() + " - " + jogos.getPreco() + " - " + jogos.getGenero() + " - " + jogos.getPlataforma());
+                        System.out.println("------------------------------------------------------------------------------------\n");
+                    }else {
+                        System.out.println("\nEsse jogo não foi encontrado!\n");
+                    }
                 }
             }
         }
