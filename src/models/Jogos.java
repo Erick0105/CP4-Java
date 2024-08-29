@@ -1,6 +1,8 @@
 package models;
 
 import enums.GeneroJogoEnum;
+import enums.PlataformasEnum;
+
 import java.util.ArrayList;
 
 public class Jogos {
@@ -12,7 +14,7 @@ public class Jogos {
     private double preco;
     private GeneroJogoEnum genero;
     private Boolean sequencia;
-    private ArrayList<String> plataforma;
+    private PlataformasEnum plataforma;
 
     //Getters e Setters
 
@@ -63,12 +65,11 @@ public class Jogos {
         this.sequencia = sequencia;
     }
 
-
-    public ArrayList<String> getPlataforma() {
+    public PlataformasEnum getPlataforma() {
         return plataforma;
     }
-    public void setPlataforma(ArrayList<String> plataforma) {
+
+    public void setPlataforma(PlataformasEnum plataforma) {
         this.plataforma = plataforma;
     }
-
 }
