@@ -34,12 +34,18 @@ public class Main {
                 System.out.println("--------CADASTRAR----------");
                 System.out.print("Digite o ID do jogo: ");
                 int id = leitor.nextInt();
+                leitor.nextLine();
+
                 System.out.print("Digite o nome do jogo: ");
-                String nome = leitor.nextLine();
+                String nome = leitor.nextLine(); // Agora espera pela entrada correta do nome
+
                 System.out.print("Digite a data de lançamento do jogo: ");
                 int lancamento = leitor.nextInt();
+                leitor.nextLine();
+
                 System.out.print("Digite o preço do Jogo: ");
                 double preco = leitor.nextDouble();
+
 
                 GeneroJogoEnum genero = null;
                 while (genero == null) {
