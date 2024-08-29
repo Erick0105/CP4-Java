@@ -1,6 +1,7 @@
 package tests;
 
 import enums.GeneroJogoEnum;
+import enums.PlataformasEnum;
 import models.Jogos;
 
 import java.util.*;
@@ -13,7 +14,7 @@ public class Main {
         Scanner leitor = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Menu" +
+            System.out.println("------------------- MENU ----------------------" +
                     "\n0- Sair" +
                     "\n1- Cadastrar" +
                     "\n2- Listar" +
@@ -21,6 +22,7 @@ public class Main {
                     "\n4- Consultar por xxx" +
                     "\n5- Alterar" +
                     "\n6- Excluir" +
+                    "\n----------------------------------------------" +
                     "\nDigite a operação desejada: ");
             int op = leitor.nextInt();
 
@@ -86,17 +88,41 @@ public class Main {
                             break;
                         default:
                             System.out.println("Esse genero invalido. Por Favor, tente novamente!");
+                    }
+                }
+                game.setPlataforma(null);
+                while (game.getPlataforma() == null){
+                    System.out.println("Digite a plataforma do Jogo:\n(1)PC, (2)Celular, (3)Console, (4)Todas : ");
+                    int opPlataforma = leitor.nextInt();
+
+                    switch (opPlataforma){
+
+                        case 1:
+                            game.setPlataforma(PlataformasEnum.PC);
                             break;
+                        case 2:
+                            game.setPlataforma(PlataformasEnum.CELULAR);
+                            break;
+                        case 3:
+                            game.setPlataforma(PlataformasEnum.CONSOLE);
+                            break;
+                        case 4:
+                            game.setPlataforma(PlataformasEnum.TODAS);
+                            break;
+                        default:
+                            System.out.println("Opção escolhida é invalida");
                     }
                 }
 
                 listGames.add(game);
-                System.out.println("Jogo Listado");
+                System.out.println("Jogo Listado\n\n");
 
             } else if (op == 2) {
-                System.out.println("Jogos listados");
+                System.out.println("Jogos listados:");
                 for (Jogos jogos : listGames){
-                    System.out.println(jogos.getNome() + " - " + jogos.getId() + " - " + jogos.getLancamento() + " - " + jogos.getPreco() + " - " + jogos.getGenero());
+                    System.out.println("------------------------------------------------------------------------------------");
+                    System.out.println(jogos.getNome() + " - " + jogos.getId() + " - " + jogos.getLancamento() + " - " + jogos.getPreco() + " - " + jogos.getGenero() + " - " + jogos.getPlataforma());
+                    System.out.println("------------------------------------------------------------------------------------");
                 }
             }
         }
