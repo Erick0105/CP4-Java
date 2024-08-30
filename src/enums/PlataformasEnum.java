@@ -2,7 +2,7 @@ package enums;
 
 public enum PlataformasEnum {
     PC,
-    CELULAR,
+    MOBILE,
     CONSOLE,
     TODAS
 }

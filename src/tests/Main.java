@@ -2,9 +2,7 @@ package tests;
 
 import enums.GeneroJogoEnum;
 import enums.PlataformasEnum;
-import models.Console;
-import models.ContagemRegistros;
-import models.Jogos;
+import models.*;
 
 import java.util.*;
 
@@ -73,12 +71,28 @@ public class Main {
                     }
                 }
             } else if (op == 4) {
-                System.out.println("Digite a plataforma que vc deseja pesquisar: C/P/T");
-                String opcao = leitor.nextLine().toUpperCase();
-                opcao.substring(0,0);
-                if (opcao == "C") {
-                    Console.adicionarJogo(ContagemRegistros.getListaJogos());
-                    Console.mostrarLista();
+                while (true) {
+                    System.out.println("Digite a plataforma que vc deseja pesquisar: (1)Pc/(2)Mobile/(3)Console/(4)Todos");
+                    int opc = leitor.nextInt();
+                    if (opc == 3) {
+                        Console.adicionarJogo(ContagemRegistros.getListaJogos());
+                        Console.mostrarLista();
+                        break;
+                    } else if (opc == 1) {
+                        Pc.adicionarJogo(ContagemRegistros.getListaJogos());
+                        Pc.mostrarLista();
+                        break;
+                    } else if (opc == 2) {
+                        Mobile.adicionarJogo(ContagemRegistros.getListaJogos());
+                        Mobile.mostrarLista();
+                        break;
+                    } else if (opc == 4) {
+                        Todas.adicionarJogo(ContagemRegistros.getListaJogos());
+                        Todas.mostrarLista();
+                        break;
+                    } else {
+                        System.out.println("Opção invalida");
+                    }
                 }
 
             } else if (op == 5) {

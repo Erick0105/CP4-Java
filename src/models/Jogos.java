@@ -151,7 +151,7 @@ public class Jogos {
         do {
             System.out.println("------------------- OPÇÕES GENERO ----------------------" +
                     "\n(1) - Pc;" +
-                    "\n(2) - Celular;" +
+                    "\n(2) - Mobile;" +
                     "\n(3) - Console;" +
                     "\n(4) - Todas" +
                     "\nDigite qual das opções é a plataforma do jogo:");
@@ -163,7 +163,7 @@ public class Jogos {
                     this.plataforma = PlataformasEnum.PC;
                     break;
                 case 2:
-                    this.plataforma = PlataformasEnum.CELULAR;
+                    this.plataforma = PlataformasEnum.MOBILE;
                     break;
                 case 3:
                     this.plataforma = PlataformasEnum.CONSOLE;
