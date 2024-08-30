@@ -17,7 +17,7 @@ public class Main {
         while (true) {
             System.out.println();
             String msg = "------------------- MENU ----------------------";
-            System.out.println(msg +
+            System.out.print(msg +
                     "\n0- Sair" +
                     "\n1- Cadastrar" +
                     "\n2- Listar" +
@@ -34,7 +34,9 @@ public class Main {
                 break;
 
             } else if (op == 1) {
-                novoJogo.cadastrarJogo();
+                novoJogo = novoJogo.cadastrarJogo();
+
+                listGames.forEach(j-> System.out.println(j.getNome()));
                 ContagemRegistros.resgistrarJogo(novoJogo);
 
             } else if (op == 2) {
@@ -70,7 +72,22 @@ public class Main {
                     }
                 }
             } else if (op == 4) {
-                System.out.println("Função não criada");
+                System.out.println("Digite o Nome do jogo: ");
+                String nome = leitor.nextLine();
+                for (Jogos jogo : ContagemRegistros.getListaJogos()) {
+                    if (jogo.getNome() == nome) {
+                        System.out.println("----------------------JOGO-ENCONTRADO-------------------------" +
+                                "\nID: " + jogo.getId() +
+                                "\nNome: " + jogo.getNome() +
+                                "\nPreço: " + jogo.getPreco() +
+                                "\nGenero: " + jogo.getGenero() +
+                                "\nPlataformas: " + jogo.getPlataforma() +
+                                "\nData de Lançamento: " + jogo.getLancamento() +
+                                "\n-----------------------------------------------");
+                    } else {
+                        System.out.println("\nnão foi encontrado um jogo com o nome passado!!!\n");
+                    }
+                }
             } else if (op == 5) {
                 System.out.println("Função não criada");
             } else if (op == 6) {
