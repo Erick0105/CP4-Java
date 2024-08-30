@@ -3,7 +3,6 @@ package models;
 import enums.GeneroJogoEnum;
 import enums.PlataformasEnum;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Jogos {
@@ -70,17 +69,19 @@ public class Jogos {
 
 
     //Metodos Gerais
-    public void cadastrarJogo(){
+    public Jogos cadastrarJogo(){
         System.out.println("-------------CADASTRAR---------------");
-
-        System.out.println("Qual o nome do jogo?");
-        this.nome = leitor.next();
 
         System.out.println("Qual a data de lançamento do jogo?");
         this.lancamento = leitor.nextInt();
+        leitor.nextLine();
+
+        System.out.println("Qual o nome do jogo?");
+        this.nome = leitor.nextLine();
 
         System.out.println("Qual o preço do jogo?");
         this.preco = leitor.nextDouble();
+        leitor.nextLine();
 
         do {
             System.out.println("------------------- OPÇÕES GENERO ----------------------" +
@@ -178,5 +179,19 @@ public class Jogos {
         this.id = ContagemRegistros.getQtdJogos() + 1;
         System.out.println("---------JOGO-CADASTRADO-COM-SUCESSO!!---------");
         System.out.println("O Id desse jogo é: "+ this.getId());
+
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Jogos{" +
+                ", id=" + id +
+                ", nome='" + nome + '\'' +
+                ", lancamento=" + lancamento +
+                ", preco=" + preco +
+                ", genero=" + genero +
+                ", plataforma=" + plataforma +
+                '}';
     }
 }

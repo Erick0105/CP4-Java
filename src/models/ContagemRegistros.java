@@ -10,6 +10,7 @@ public class ContagemRegistros {
     private static int qtdJogos;
     private static ArrayList<Jogos> listaJogos = new ArrayList<>();
 
+
     //Getters e Setters
     public static int getQtdJogos() {
         return qtdJogos;
@@ -29,6 +30,9 @@ public class ContagemRegistros {
     public static void resgistrarJogo(Jogos novoJogo){
         qtdJogos += 1;
         listaJogos.add(novoJogo);
+
+
+
     }
 
     public static void removerJogo(int idJogoAlvo){
