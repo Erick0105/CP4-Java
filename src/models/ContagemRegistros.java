@@ -30,4 +30,9 @@ public class ContagemRegistros {
         qtdJogos += 1;
         listaJogos.add(novoJogo);
     }
+
+    public static void removerJogo(int idJogoAlvo){
+        int idAlvo = idJogoAlvo - 1;
+        listaJogos.removeIf(jogo -> jogo.getId() == idAlvo);
+    }
 }

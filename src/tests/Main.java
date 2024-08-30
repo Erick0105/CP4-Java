@@ -38,42 +38,46 @@ public class Main {
                 ContagemRegistros.resgistrarJogo(novoJogo);
 
             } else if (op == 2) {
-                System.out.println("Jogos listados:");
-                listGames = ContagemRegistros.getListaJogos();
-                for (Jogos jogos : listGames){
-                    System.out.println("------------------------------------------------------------------------------------");
-                    System.out.println( jogos.getId() + " - " + jogos.getNome() + " - " + jogos.getLancamento() + " - " + jogos.getPreco() + " - " + jogos.getGenero() + " - " + jogos.getPlataforma());
-                    System.out.println("------------------------------------------------------------------------------------\n");
+                if (ContagemRegistros.getQtdJogos() == 0){
+                    System.out.println("Nenhum Jogo Cadastrado/Registrado");
+                }else {
+                    System.out.println("----------------------LISTA-DE-JOGOS-------------------------");
+                    for (Jogos jogo : ContagemRegistros.getListaJogos()){
+                        System.out.println("\nID: " + jogo.getId() +
+                                "\nNome: " + jogo.getNome() +
+                                "\nPreço: " + jogo.getPreco() +
+                                "\nGenero: " + jogo.getGenero() +
+                                "\nPlataformas: " + jogo.getPlataforma() +
+                                "\nData de Lançamento: " + jogo.getLancamento() +
+                                "\n-----------------------------------------------");
+                    }
                 }
             } else if (op == 3) {
-                System.out.println("Digite o ID ou Codigo do jogo: ");
+                System.out.println("Digite o ID do jogo: ");
                 int id = leitor.nextInt();
-                for (Jogos jogos : listGames){
-                    if (jogos.getId() == id){
-                        System.out.println("------------------------------------------------------------------------------------");
-                        System.out.println( jogos.getId() + " - " + jogos.getNome() + " - " + jogos.getLancamento() + " - " + jogos.getPreco() + " - " + jogos.getGenero() + " - " + jogos.getPlataforma());
-                        System.out.println("------------------------------------------------------------------------------------\n");
+                for (Jogos jogo : ContagemRegistros.getListaJogos()){
+                    if (jogo.getId() == id){
+                        System.out.println("----------------------JOGO-ENCONTRADO-------------------------" +
+                                "\nID: " + jogo.getId() +
+                                "\nNome: " + jogo.getNome() +
+                                "\nPreço: " + jogo.getPreco() +
+                                "\nGenero: " + jogo.getGenero() +
+                                "\nPlataformas: " + jogo.getPlataforma() +
+                                "\nData de Lançamento: " + jogo.getLancamento() +
+                                "\n-----------------------------------------------");
                     }else {
-                        System.out.println("\nEsse jogo não foi encontrado!\n");
+                        System.out.println("\nnão foi encontrado um jogo com o ID passado!!!\n");
                     }
                 }
             } else if (op == 4) {
-
+                System.out.println("Função não criada");
             } else if (op == 5) {
-
+                System.out.println("Função não criada");
             } else if (op == 6) {
                 System.out.println("Digite o ID ou Codigo do jogo para exclui-lo!!: ");
-                int id = leitor.nextInt();
-                for (Jogos jogos : listGames) {
-                    if (jogos.getId() == id) {
-                        System.out.println("------------------------------------------------------------------------------------");
-                        listGames.remove(jogos);
-                        System.out.println("Jogo apagado");
-                        System.out.println("------------------------------------------------------------------------------------\n");
-                    } else {
-                        System.out.println("\nEsse jogo não foi encontrado!\n");
-                    }
-                }
+                int idJogoAlvo = leitor.nextInt();
+                ContagemRegistros.removerJogo(idJogoAlvo);
+                System.out.println("----------------------JOGO-EXCLUIDO-------------------------");
             } else {
                 System.out.println("Opção invalida, Por favor tente novamente");
             }

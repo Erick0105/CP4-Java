@@ -16,7 +16,6 @@ public class Jogos {
     private int lancamento;
     private double preco;
     private GeneroJogoEnum genero;
-    private Boolean sequencia;
     private PlataformasEnum plataforma;
 
     //Getters e Setters
@@ -60,13 +59,6 @@ public class Jogos {
     }
     public void setGenero(GeneroJogoEnum genero) {
         this.genero = genero;
-    }
-
-    public Boolean getSequencia() {
-        return sequencia;
-    }
-    public void setSequencia(Boolean sequencia) {
-        this.sequencia = sequencia;
     }
 
     public PlataformasEnum getPlataforma() {
