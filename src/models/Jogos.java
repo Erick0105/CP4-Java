@@ -5,7 +5,7 @@ import enums.PlataformasEnum;
 
 import java.util.Scanner;
 
-public class Jogos {
+public class Jogos implements Cloneable{
 
     Scanner leitor = new Scanner(System.in);
 
@@ -69,6 +69,19 @@ public class Jogos {
 
 
     //Metodos Gerais
+    public Jogos (){}
+
+    public Jogos(String nome,int lancamento,double preco, PlataformasEnum plataforma, GeneroJogoEnum genero) {
+        this.nome = nome;
+        this.plataforma = plataforma;
+        this.genero = genero;
+    }
+
+    @Override
+    public Jogos clone() {
+        return new Jogos(this.nome, this.lancamento, this.preco , this.plataforma, this.genero);
+    }
+
     public Jogos cadastrarJogo(){
         System.out.println("-------------CADASTRAR---------------");
 
@@ -181,17 +194,5 @@ public class Jogos {
         System.out.println("O Id desse jogo é: "+ this.getId());
 
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return "Jogos{" +
-                ", id=" + id +
-                ", nome='" + nome + '\'' +
-                ", lancamento=" + lancamento +
-                ", preco=" + preco +
-                ", genero=" + genero +
-                ", plataforma=" + plataforma +
-                '}';
     }
 }

@@ -35,10 +35,14 @@ public class Main {
                 break;
 
             } else if (op == 1) {
-                novoJogo = novoJogo.cadastrarJogo();
-
-                listGames.forEach(j-> System.out.println(j.getNome()));
-                ContagemRegistros.resgistrarJogo(novoJogo);
+                if (ContagemRegistros.getQtdJogos() == 0){
+                    novoJogo = novoJogo.cadastrarJogo();
+                    ContagemRegistros.resgistrarJogo(novoJogo);
+                }else {
+                    Jogos jogo2 = novoJogo.clone();
+                    jogo2.cadastrarJogo();
+                    ContagemRegistros.resgistrarJogo(jogo2);
+                }
 
             } else if (op == 2) {
                 if (ContagemRegistros.getQtdJogos() == 0){
