@@ -28,10 +28,8 @@ public class ContagemRegistros {
 
     //Metodos Gerais
     public static void resgistrarJogo(Jogos novoJogo){
-        qtdJogos += 1;
+        qtdJogos = novoJogo.getId();
         listaJogos.add(novoJogo);
-
-
 
     }
 

@@ -2,6 +2,7 @@ package tests;
 
 import enums.GeneroJogoEnum;
 import enums.PlataformasEnum;
+import models.Console;
 import models.ContagemRegistros;
 import models.Jogos;
 
@@ -22,7 +23,7 @@ public class Main {
                     "\n1- Cadastrar" +
                     "\n2- Listar" +
                     "\n3- Consultar por codigo" +
-                    "\n4- Consultar por xxx" +
+                    "\n4- Listar jogos Plataforma" +
                     "\n5- Alterar" +
                     "\n6- Excluir" +
                     "\n----------------------------------------------" +
@@ -72,22 +73,14 @@ public class Main {
                     }
                 }
             } else if (op == 4) {
-                System.out.println("Digite o Nome do jogo: ");
-                String nome = leitor.nextLine();
-                for (Jogos jogo : ContagemRegistros.getListaJogos()) {
-                    if (jogo.getNome() == nome) {
-                        System.out.println("----------------------JOGO-ENCONTRADO-------------------------" +
-                                "\nID: " + jogo.getId() +
-                                "\nNome: " + jogo.getNome() +
-                                "\nPreço: " + jogo.getPreco() +
-                                "\nGenero: " + jogo.getGenero() +
-                                "\nPlataformas: " + jogo.getPlataforma() +
-                                "\nData de Lançamento: " + jogo.getLancamento() +
-                                "\n-----------------------------------------------");
-                    } else {
-                        System.out.println("\nnão foi encontrado um jogo com o nome passado!!!\n");
-                    }
+                System.out.println("Digite a plataforma que vc deseja pesquisar: C/P/T");
+                String opcao = leitor.nextLine().toUpperCase();
+                opcao.substring(0,0);
+                if (opcao == "C") {
+                    Console.adicionarJogo(ContagemRegistros.getListaJogos());
+                    Console.mostrarLista();
                 }
+
             } else if (op == 5) {
                 System.out.println("Função não criada");
             } else if (op == 6) {
