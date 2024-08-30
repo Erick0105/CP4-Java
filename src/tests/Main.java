@@ -34,7 +34,7 @@ public class Main {
 
             } else if (op == 1) {
                 if (ContagemRegistros.getQtdJogos() == 0){
-                    novoJogo = novoJogo.cadastrarJogo();
+                    novoJogo.cadastrarJogo();
                     ContagemRegistros.resgistrarJogo(novoJogo);
                 }else {
                     Jogos jogo2 = novoJogo.clone();

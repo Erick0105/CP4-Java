@@ -30,7 +30,11 @@ public class ContagemRegistros {
     public static void resgistrarJogo(Jogos novoJogo){
         qtdJogos = novoJogo.getId();
         listaJogos.add(novoJogo);
+    }
 
+    public static void listarJogos(){
+        listaJogos.stream()
+                .forEach(jogos -> System.out.println());
     }
 
     public static void removerJogo(int idJogoAlvo){
