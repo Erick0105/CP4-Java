@@ -162,7 +162,7 @@ public class Jogos implements Cloneable{
 
 
         do {
-            System.out.println("------------------- OPÇÕES GENERO ----------------------" +
+            System.out.println("-------------------OPÇÕES-PLATAFORMA----------------------" +
                     "\n(1) - Pc;" +
                     "\n(2) - Mobile;" +
                     "\n(3) - Console;" +
